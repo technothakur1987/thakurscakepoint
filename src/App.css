@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body{
+    overflow-x: hidden;
+    user-select: none;
+    
+}
+.navbar .active{
+    color: #ff0000;
+}
+
+:root {
+    --swiper-theme-color: grey!important;
+}
+.upperslider .swiper-button-prev{
+    color: white!important;
+}
+.upperslider .swiper-button-next{
+    color: white!important;
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 206, 15);  /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkred;  /* Thumb (scroll handle) color */
+    border-radius: 10px;  /* Rounded edges */
+    border: 2px solid #FFCE0F;  /* Border matching the track color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkred;  /* Thumb color on hover */
+}
+
+
+/* For Firefox */
+body{
+
+overflow-x: hidden;
+scrollbar-width: thin;  /* Thin scrollbar */
+scrollbar-color: red #FFCE0F;  /* Thumb (red) and track (#FFCE0F) colors */
+}
+/* Navbar.css */
+
+@keyframes slide-right-open {
+    0%{
+        width: 0;
+        opacity: 0;
+        display: none;
+    }
+    
+    100%{
+        width: 100%;
+        opacity: 50%;
+        display: block;
+    }
+}
+@keyframes slide-right {
+    0%{
+        width: 0;
+        opacity: 0;
+        
+    }
+    
+    100%{
+        width: 95%;
+        opacity: 1;
+       
+    }
+}
+.open{
+    animation:slide-right-open 0.3s forwards ease-in-out
+}
+.openmenu{
+    animation:slide-right 0.7s forwards ease-in-out
+}
+@keyframes slide-left {
+    100%{
+        width: 0;
+        opacity: 0;
+       
+    }
+    
+    0%{
+        width: 95%;
+        opacity: 1;
+        
+    }
+}
+@keyframes slide-left-close {
+   
+    
+    0%{
+        width: 100%;
+        opacity: 50%;
+        display: block;
+    }
+    100%{
+        width: 0;
+        opacity: 0;
+        display: none;
+    }
+}
+.close{
+    animation:slide-left-close 0.7s forwards ease-in-out
+}
+.closemenu{
+    animation:slide-left 0.3s forwards ease-in-out
+}
+
+.backdropEffect{
+    filter: drop-shadow(0px 0px 16px rgb(255, 206, 15));
+}
+  
+
+
+
+  
+  
+  
