@@ -3,14 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import soundFile from "../assets/sound.mp3";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
-  const { loader,bakeryUser } = useSelector(
-    (state) => state.cakeSlice
-  );
-
-  console.log(bakeryUser.email)
   const [isOpen, setIsOpen] = useState(false);
   const audio = useRef(new Audio(soundFile));
 
@@ -24,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-[10vh] lg:h-[15vh] flex justify-center shadow-lg fixed top-0 w-full font-poppins z-[99] bg-white navbar lg:px-5">
+    <div className="h-[10vh] lg:h-[15vh] flex justify-center shadow-lg fixed top-0 w-full font-poppins z-[99] bg-white navbar px-5">
       {/* For larger screens */}
       <ul className="hidden list-unstyled lg:flex items-center  justify-center gap-14 text-xl font-semibold text-[#701A23]  ">
         <li>
@@ -46,8 +40,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          {bakeryUser.email === '' ?<NavLink to="/login">Log-In</NavLink>:<NavLink to="/user">My-Hub</NavLink>}
-          
+          <NavLink to="/login">Log-In</NavLink>
         </li>
         <li>
           <NavLink to="/signin">Sign-Up</NavLink>
@@ -87,9 +80,7 @@ const Navbar = () => {
             <NavLink to="/products" onClick={sidemenu} className="py-5 text-white text-xl">Products</NavLink>
             <NavLink to="/aboutus" onClick={sidemenu} className="py-5 text-white text-xl">About Us</NavLink>
             <NavLink to="/contactus/" onClick={sidemenu} className="py-5 text-white text-xl">Contact Us</NavLink>
-
-            {bakeryUser.email === '' ?<NavLink to="/login" onClick={sidemenu} className="py-5 text-white text-xl">Log-In</NavLink>:<NavLink to="/user" onClick={sidemenu} className="py-5 text-white text-xl">My-Hub</NavLink>}
-            
+            <NavLink to="/login" onClick={sidemenu} className="py-5 text-white text-xl">Log-In</NavLink>
             <NavLink to="/signin" onClick={sidemenu} className="py-5 text-white text-xl">Sign-Up</NavLink>
             <li className="relative py-10 left-[-5%]">
               <Link to="/cart" onClick={sidemenu}>

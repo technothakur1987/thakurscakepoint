@@ -18,14 +18,17 @@ import ContactReachUs from './pages/ContactUs/contactcomponents/ContactReachUs.j
 import ContactCustomCake from './pages/ContactUs/contactcomponents/ContactCustomCake.jsx';
 import ContactCustFeedBackForm from './pages/ContactUs/contactcomponents/ContactCustFeedBackForm.jsx';
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer} from 'react-toastify';
+import User from './user/User.jsx';
+import Reset from './globalcomponents/Reset.jsx';
 function App() {
 
   const dispatch = useDispatch();
-  const { loader } = useSelector(
+  const { loader,bakeryUser } = useSelector(
     (state) => state.cakeSlice
   );
 
-  console.log(loader)
+  console.log(bakeryUser.email)
   return (
     <>
       <BrowserRouter>
@@ -46,11 +49,14 @@ function App() {
           </Route>
           
           <Route path='/login' element={<Login />} />
+          <Route path='/reset' element={<Reset />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/user' element={<User />} />
         </Routes>
         
         <Footer />
         <ScrollToTopBtn />
+        <ToastContainer />
       </BrowserRouter>
     </>
   );

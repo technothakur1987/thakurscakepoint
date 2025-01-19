@@ -122,6 +122,10 @@ scrollbar-color: red #FFCE0F;  /* Thumb (red) and track (#FFCE0F) colors */
 
 
 
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  }
   
   
   
